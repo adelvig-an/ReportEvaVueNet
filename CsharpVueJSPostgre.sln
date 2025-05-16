@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "csharpvuejspostgre.client", "csharpvuejspostgre.client\csharpvuejspostgre.client.esproj", "{0942671B-E8EA-49FD-2ECD-2942161B0E4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpVueJSPostgre.Server", "CsharpVueJSPostgre.Server\CsharpVueJSPostgre.Server.csproj", "{913E9C03-66A2-48BE-82D5-988A9B542EF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0942671B-E8EA-49FD-2ECD-2942161B0E4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0942671B-E8EA-49FD-2ECD-2942161B0E4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0942671B-E8EA-49FD-2ECD-2942161B0E4C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0942671B-E8EA-49FD-2ECD-2942161B0E4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0942671B-E8EA-49FD-2ECD-2942161B0E4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0942671B-E8EA-49FD-2ECD-2942161B0E4C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{913E9C03-66A2-48BE-82D5-988A9B542EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{913E9C03-66A2-48BE-82D5-988A9B542EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{913E9C03-66A2-48BE-82D5-988A9B542EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{913E9C03-66A2-48BE-82D5-988A9B542EF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D172C708-30DA-4156-8C9F-7DC801F31E5C}
+	EndGlobalSection
+EndGlobal
