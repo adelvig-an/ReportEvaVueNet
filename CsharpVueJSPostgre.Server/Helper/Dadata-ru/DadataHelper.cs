@@ -1,22 +1,22 @@
 ﻿using Dadata;
-using System.IO;
+using Model;
 
 namespace RExpProJS.Server.Models.Helper.Dadata_ru
 {
     public class DadataHelper
     {
-        public static bool GetSuggestions(string fullAddress, out AddressModel[] addresses)
+        private readonly string _token;
+        private readonly string _secret;
+
+        public DadataHelper(IConfiguration configuration)
         {
-            var configuration = new ConfigurationBuilder().AddJsonFile("Config.json");
+            _token = configuration["DadataAddress:token"];
+            _secret = configuration["DadataAddress:secret"];
+        }
 
-            IConfigurationRoot configurationRoot = configuration.Build();
-
-            DadataConf dadataConf = new DadataConf();
-            configurationRoot.GetSection(nameof(DadataConf)).Bind(dadataConf);
-
-            var token = dadataConf.Token;
-
-            var client = new SuggestClientSync(token);
+        public bool GetSuggestions(string fullAddress, out AddressModel[] addresses)
+        {
+            var client = new SuggestClientSync(_token, _secret);
             try
             {
                 var adr = client.SuggestAddress(fullAddress);
@@ -29,6 +29,7 @@ namespace RExpProJS.Server.Models.Helper.Dadata_ru
                 return false;
             }
         }
+
         public static AddressModel ToAddress(Dadata.Model.Address address)
         {
             return new AddressModel

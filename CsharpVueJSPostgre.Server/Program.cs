@@ -12,7 +12,9 @@ string dadataSecret = builder.Configuration["Dadata:Secret"];
 // Конфигурация PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+        .LogTo(Console.WriteLine, LogLevel.Information);
+    
     options.EnableSensitiveDataLogging(); // Только для разработки!
     options.LogTo(Console.WriteLine,
         new[] { DbLoggerCategory.Database.Command.Name },

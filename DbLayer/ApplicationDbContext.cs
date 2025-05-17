@@ -13,13 +13,18 @@ namespace DbLayer
             : base(options) { }
 
         // DbSet для всех моделей
-        public virtual DbSet<ReportModel> Reports { get; set; }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Address> Address { get; set; }
-        public virtual DbSet<Contact> Contacts { get; set; }
-        public virtual DbSet<Contractor> Contractors { get; set; }
-        public virtual DbSet<Expert> Experts { get; set; }
-        public virtual DbSet<ExpertTask> ExpertTasks { get; set; }
+        public DbSet<ContractModel> Contracts { get; set; }
+        public DbSet<ReportModel> Reports { get; set; }
+        public DbSet<ContactModel> Contacts { get; set; }
+        public DbSet<ManagementModel> Management { get; set; }
+        public DbSet<CounterpartyModel> Counterparty { get; set; }
+        public DbSet<AddressModel> Addresses { get; set; }
+        public DbSet<CustomerModel> Customers { get; set; }
+        public DbSet<ExpertModel> Experts { get; set; }
+        public DbSet<ExpertOrganizationModel> ExpertOrganizations { get; set; }
+        public DbSet<ExpertQualificationModel> ExpertQualifications { get; set; }
+        public DbSet<InsurancePolicyModel> InsurancePolicies { get; set; }
+        public DbSet<SROrganizationModel> SROrganizations { get; set; }
 
         //Настройка моделей(опционально)
         protected override void OnModelCreating(ModelBuilder modelBuilder)
