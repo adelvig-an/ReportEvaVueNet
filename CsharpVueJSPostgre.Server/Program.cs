@@ -1,5 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 
+//Мои секреты
+string dadataToken = builder.Configuration["Dadata:Token"];
+string dadataSecret = builder.Configuration["Dadata:Secret"];
+
 // Add services to the container.
 
 builder.Services.AddControllers();

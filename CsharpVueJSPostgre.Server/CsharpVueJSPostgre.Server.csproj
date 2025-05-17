@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,6 +7,7 @@
     <SpaRoot>..\csharpvuejspostgre.client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:14434</SpaProxyServerUrl>
+    <UserSecretsId>e39aa4a2-7d74-4ced-9aba-c840475603ee</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
