@@ -13,7 +13,7 @@ namespace DbLayer
             : base(options) { }
 
         // DbSet для всех моделей
-        public virtual DbSet<Report> Reports { get; set; }
+        public virtual DbSet<ReportModel> Reports { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Address> Address { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
@@ -26,11 +26,42 @@ namespace DbLayer
         {
             // Настройка точных типов данных для PostgreSQL
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Report>()
-                .Property(r => r.CreationDate)
-                .HasColumnType("timestamp with time zone");
-
-            // Другие настройки...
+            modelBuilder.Entity<ContractModel>()
+                .Property(e => e.ContractType)
+                .HasConversion(v => v.ToString(),
+                v => (ContractType)Enum.Parse(typeof(ContractType), v));
+            modelBuilder.Entity<ContractModel>()
+                .Property(e => e.StatusContract)
+                .HasConversion(v => v.ToString(),
+                v => (StatusType)Enum.Parse(typeof(StatusType), v));
+            modelBuilder.Entity<ContractModel>()
+                .Property(e => e.PaymentStatusContract)
+                .HasConversion(v => v.ToString(),
+                v => (PaymentStatusType)Enum.Parse(typeof(PaymentStatusType), v));
+            modelBuilder.Entity<ReportModel>()
+                .Property(e => e.ReportType)
+                .HasConversion(v => v.ToString(),
+                v => (ReportType)Enum.Parse(typeof(ReportType), v));
+            modelBuilder.Entity<ManagementModel>()
+                .Property(e => e.AuthorizationDocuments)
+                .HasConversion(v => v.ToString(),
+                v => (AuthorizationDocuments)Enum.Parse(typeof(AuthorizationDocuments), v));
+            modelBuilder.Entity<CounterpartyModel>()
+                .Property(e => e.CounterpartyType)
+                .HasConversion(v => v.ToString(),
+                v => (CounterpartyType)Enum.Parse(typeof(CounterpartyType), v));
+            modelBuilder.Entity<ExpertQualificationModel>()
+                .Property(e => e.QualificationType)
+                .HasConversion(v => v.ToString(),
+                v => (QualificationType)Enum.Parse(typeof(QualificationType), v));
+            modelBuilder.Entity<ExpertQualificationModel>()
+                .Property(e => e.SpecialityType)
+                .HasConversion(v => v.ToString(),
+                v => (SpecialityType)Enum.Parse(typeof(SpecialityType), v));
+            modelBuilder.Entity<SROrganizationModel>()
+                .Property(e => e.SROrganizationType)
+                .HasConversion(v => v.ToString(),
+                v => (SROrganizationType)Enum.Parse(typeof(SROrganizationType), v));
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

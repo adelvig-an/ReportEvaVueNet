@@ -13,6 +13,10 @@ string dadataSecret = builder.Configuration["Dadata:Secret"];
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.EnableSensitiveDataLogging(); // Только для разработки!
+    options.LogTo(Console.WriteLine,
+        new[] { DbLoggerCategory.Database.Command.Name },
+        LogLevel.Information);
 });
 
 builder.Services.AddControllers();
