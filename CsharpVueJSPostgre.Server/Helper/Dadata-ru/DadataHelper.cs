@@ -1,22 +1,16 @@
 ﻿using Dadata;
+using Microsoft.Extensions.Configuration;
 using Model;
 
 namespace RExpProJS.Server.Models.Helper.Dadata_ru
 {
     public class DadataHelper
     {
-        private readonly string _token;
-        private readonly string _secret;
-
-        public DadataHelper(IConfiguration configuration)
+        public static bool GetSuggestions(string fullAddress, out AddressModel[] addresses, IConfiguration configuration)
         {
-            _token = configuration["DadataAddress:token"];
-            _secret = configuration["DadataAddress:secret"];
-        }
-
-        public bool GetSuggestions(string fullAddress, out AddressModel[] addresses)
-        {
-            var client = new SuggestClientSync(_token, _secret);
+            var token = configuration["DadataAddress:token"];
+            var secret = configuration["DadataAddress:secret"];
+            var client = new SuggestClientSync(token, secret);
             try
             {
                 var adr = client.SuggestAddress(fullAddress);
@@ -85,18 +79,11 @@ namespace RExpProJS.Server.Models.Helper.Dadata_ru
             return ToAddress(suggestion.data);
         }
 
-        public static bool GetSuggestions(string query, out CounterpartyModel[] organizations)
+        public static bool GetSuggestions(string query, out CounterpartyModel[] organizations, IConfiguration configuration)
         {
-            var configuration = new ConfigurationBuilder().AddJsonFile("Config.json");
-
-            IConfigurationRoot configurationRoot = configuration.Build();
-
-            DadataConf dadataConf = new DadataConf();
-            configurationRoot.GetSection(nameof(DadataConf)).Bind(dadataConf);
-
-            var token = dadataConf.Token;
-
-            var client = new SuggestClientSync(token);
+            var token = configuration["DadataAddress:token"];
+            var secret = configuration["DadataAddress:secret"];
+            var client = new SuggestClientSync(token, secret);
             try
             {
                 var org = client.SuggestParty(query);
