@@ -1,5 +1,8 @@
+using BussinesLayer.Interfaces;
+using BussinesLayer.Repository;
 using DbLayer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,13 +15,17 @@ string dadataSecret = builder.Configuration["Dadata:Secret"];
 // Конфигурация PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
-        .LogTo(Console.WriteLine, LogLevel.Information);
-    
-    options.EnableSensitiveDataLogging(); // Только для разработки!
-    options.LogTo(Console.WriteLine,
-        new[] { DbLoggerCategory.Database.Command.Name },
-        LogLevel.Information);
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+
+    // Только для разработки!
+    if (builder.Environment.IsDevelopment())
+    {
+        options.EnableSensitiveDataLogging()
+               .LogTo(Console.WriteLine,
+                     new[] { DbLoggerCategory.Database.Command.Name },
+                     LogLevel.Information,
+                     DbContextLoggerOptions.SingleLine);
+    }
 });
 
 builder.Services.AddControllers();
@@ -31,6 +38,8 @@ builder.Services.AddCors(options =>
         policy.WithOrigins("http://localhost:5173") // Порт Vite
             .AllowAnyMethod()
             .AllowAnyHeader()));
+
+builder.Services.AddScoped<IReportRepository, ReportRepository>();
 
 var app = builder.Build();
 
