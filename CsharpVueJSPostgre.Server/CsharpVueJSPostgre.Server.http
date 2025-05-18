@@ -1,6 +1,54 @@
 @CsharpVueJSPostgre.Server_HostAddress = http://localhost:5281
 
-GET {{CsharpVueJSPostgre.Server_HostAddress}}/report/
+GET {{CsharpVueJSPostgre.Server_HostAddress}}/report
+Accept: application/json
+
+###
+
+GET {{CsharpVueJSPostgre.Server_HostAddress}}/report/{id}
+Accept: application/json
+
+###
+
+POST {{CsharpVueJSPostgre.Server_HostAddress}}/report
+Content-Type: application/json
+
+{
+  "reportType": 0,
+  "number": "R-001",
+  "createOn": "2024-06-01T10:00:00"
+}
+
+###
+
+POST {{CsharpVueJSPostgre.Server_HostAddress}}/report
+Content-Type: application/json
+
+{
+  "reportType": 1,
+  "number": "R-002",
+  "createOn": "2024-06-02T12:30:00"
+}
+
+###
+
+POST {{CsharpVueJSPostgre.Server_HostAddress}}/report
+Content-Type: application/json
+
+{
+  "reportType": 2,
+  "number": "R-003",
+  "createOn": "2024-06-03T15:45:00"
+}
+
+###
+
+PUT {{CsharpVueJSPostgre.Server_HostAddress}}/report
+Content-Type: application/json
+
+###
+
+DELETE {{CsharpVueJSPostgre.Server_HostAddress}}/report/{id}
 Accept: application/json
 
 ###

@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-  import ReportComponent from './components/ReportComponent.vue'
+import ReportComponent from './components/ReportComponent.vue'
 </script>
