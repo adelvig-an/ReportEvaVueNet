@@ -1,6 +1,6 @@
 @CsharpVueJSPostgre.Server_HostAddress = http://localhost:5281
 
-GET {{CsharpVueJSPostgre.Server_HostAddress}}/weatherforecast/
+GET {{CsharpVueJSPostgre.Server_HostAddress}}/report/
 Accept: application/json
 
 ###
