@@ -1,5 +1,5 @@
 <template>
-  <div class="contract-manager">
+  <div class="contract-component">
     <h1>Contract Management</h1>
 
     <form @submit.prevent="saveContract" class="contract-form">
@@ -99,7 +99,7 @@
           contractType: editingContract.value.contractType,
           contractName: editingContract.value.contractName,
           contractNumber: editingContract.value.contractNumber,
-          dateContract: editingContract.value.dateContract,
+          dateContract: new Date(editingContract.value.dateContract).toISOString(), // всегда UTC,
         };
         const response = await fetch(`${API_URL}/${editingContract.value.id}`, {
           method: 'PUT',
@@ -114,7 +114,7 @@
           contractType: editingContract.value.contractType,
           contractName: editingContract.value.contractName,
           contractNumber: editingContract.value.contractNumber,
-          dateContract: editingContract.value.dateContract,
+          dateContract: new Date(editingContract.value.dateContract).toISOString(), // всегда UTC,
         };
         const response = await fetch(API_URL, {
           method: 'POST',

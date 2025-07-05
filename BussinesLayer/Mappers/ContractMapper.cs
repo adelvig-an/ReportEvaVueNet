@@ -13,7 +13,7 @@ namespace BussinesLayer.Mappers
                 ContractType = contractModel.ContractType,
                 ContractName = contractModel.ContractName,
                 ContractNumber = contractModel.ContractNumber,
-                DateContract = contractModel.DateContract,
+                DateContract = DateTime.SpecifyKind(contractModel.DateContract, DateTimeKind.Utc),
             };
         }
 
@@ -24,7 +24,7 @@ namespace BussinesLayer.Mappers
                 ContractType = contractModel.ContractType,
                 ContractName = contractModel.ContractName,
                 ContractNumber = contractModel.ContractNumber,
-                DateContract = contractModel.DateContract,
+                DateContract = DateTime.SpecifyKind(contractModel.DateContract, DateTimeKind.Utc),
             };
         }
     }

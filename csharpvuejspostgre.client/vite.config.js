@@ -47,16 +47,8 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '/Contact': {
-                target,
-                secure: false,
-                changeOrigin: true
-            },
-            '/Contract': {
-                target,
-                secure: false,
-                changeOrigin: true
-            }
+            '/Contact': { target, secure: false, changeOrigin: true },
+            '/Contract': { target, secure: false, changeOrigin: true }
         },
         port: parseInt(env.DEV_SERVER_PORT || '14434'),
         https: {

@@ -53,10 +53,10 @@ namespace BussinesLayer.Repository
                 return null;
             }
 
-            contractDto.ContractType = contractModel.ContractType;
-            contractDto.ContractName = contractModel.ContractName;
-            contractDto.ContractNumber = contractModel.ContractNumber;
-            contractDto.DateContract = contractModel.DateContract;
+            contractModel.ContractType = contractDto.ContractType;
+            contractModel.ContractName = contractDto.ContractName;
+            contractModel.ContractNumber = contractDto.ContractNumber;
+            contractModel.DateContract = contractDto.DateContract;
 
             await _context.SaveChangesAsync();
             return contractModel;

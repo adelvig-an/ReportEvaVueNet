@@ -7,7 +7,7 @@ namespace BussinesLayer.Interfaces
     {
         Task<List<ContractsModel>> GetAllAsync();
         Task<ContractsModel?> GetByIdAsync(int id); //FirstOrDefault CAN BE NULL
-        Task<ContractsModel> CreateAsync(ContractsModel contactModel);
+        Task<ContractsModel> CreateAsync(ContractsModel contractModel);
         Task<ContractsModel?> UpdateAsync(int id, UpdateContractRequestDto updateDto);
         Task<ContractsModel?> DeleteAsync(int id);
     }

@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-controller">
+  <div class="contact-component">
     <h1>Contact Management</h1>
 
     <form @submit.prevent="saveContact" class="contact-form">
