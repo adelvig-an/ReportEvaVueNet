@@ -39,7 +39,7 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod()
             .AllowAnyHeader()));
 
-builder.Services.AddScoped<IReportRepository, ReportRepository>();
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
 
 var app = builder.Build();
 

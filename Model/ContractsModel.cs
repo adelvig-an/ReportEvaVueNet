@@ -9,6 +9,6 @@
         public string ContractType { get; set; } = string.Empty;
         public string ContractName { get; set; }= string.Empty;
         public string ContractNumber { get; set; } = string.Empty;
-
+        public int Id { get; set; }
     }
 }

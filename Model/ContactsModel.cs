@@ -1,6 +1,5 @@
 ﻿namespace Model
 {
-
     /// <summary>
     /// Общие данные человека
     /// - Имя
@@ -11,7 +10,7 @@
     /// - Дата создания
     /// - Ссылка на адрес
     /// </summary>
-    public class ContactModel
+    public class ContactsModel
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;

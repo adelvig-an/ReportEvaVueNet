@@ -17,6 +17,6 @@
         public int Id { get; set; }
         public string PasswordHash { get; set; } = string.Empty;
         public EmployeePosition Position { get; set; }
-        public ContactModel ContactId { get; set; } = new ContactModel();
+        public ContactsModel ContactId { get; set; } = new ContactsModel();
     }
 }

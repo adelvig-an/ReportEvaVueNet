@@ -23,7 +23,7 @@
         public int AppllicationId { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime Deadline { get; set; }
-        public string Status { get; set; } = string.Empty; // Статус заявки (например, "В работе", "Завершена", "Отменена")
+        public ApplicationStatus Status { get; set; }
 
         /// <summary>
         /// Связанные сущности

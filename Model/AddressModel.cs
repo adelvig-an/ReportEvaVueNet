@@ -7,56 +7,182 @@ namespace Model
     /// </summary>
     public class AddressModel
     {
-        public int Id { get; set; }
-        public string AddressFull { get; set; } = string.Empty; //Адрес полностью
-        public string Index { get; set; } = string.Empty; //Индекс
-        public string Country { get; set; } = string.Empty; //Страна
-        public string FederalDistrict { get; set; } = string.Empty; //Федеральный округ
-        public string RegionKladrId { get; set; } = string.Empty; //КЛАДР-код региона
-        public string RegionWthType { get; set; } = string.Empty; //Регион с типом
-        public string RegionType { get; set; } = string.Empty; //Тип региона (сокращенный)
-        public string RegionTypeFull { get; set; } = string.Empty; //Тип региона
-        public string Region { get; set; } = string.Empty; //Регион
-        public string AreaKladrId { get; set; } = string.Empty; //КЛАДР-код района
-        public string AreaWithType { get; set; } = string.Empty; //Район в регионе с типом
-        public string AreaType { get; set; } = string.Empty; //Тип района в регионе (сокращенный)
-        public string AreaTypeFull { get; set; } = string.Empty; //Тип района в регионе
-        public string Area { get; set; } = string.Empty; //Район в регионе
-        public string CityKladrId { get; set; } = string.Empty; //КЛАДР-код города
-        public string CityWithType { get; set; } = string.Empty; //Город с типом
-        public string CityType { get; set; } = string.Empty; //Тип города (сокращенный)
-        public string CityTypeFull { get; set; } = string.Empty; //Тип города
-        public string City { get; set; } = string.Empty; //Город
-        public string CityDistrictWithType { get; set; } = string.Empty; //Район города с типом
-        public string CityDistrictType { get; set; } = string.Empty; //Тип района города (сокращенный)
-        public string CityDistrictTypeFull { get; set; } = string.Empty; //Тип района города
-        public string CityDistrict { get; set; } = string.Empty; //Район города
-        public string SettlementKladrId { get; set; } = string.Empty; //КЛАДР-код населенного пункта
-        public string SettlemenWithType { get; set; } = string.Empty; //Населенный пункт с типом
-        public string SettlemenType { get; set; } = string.Empty; //Тип населенного пункта (сокращенный)
-        public string SettlemenTypeFull { get; set; } = string.Empty; //Тип населенного пункта
-        public string Settlemen { get; set; } = string.Empty; //Населенный пункт
-        public string StreetKladrId { get; set; } = string.Empty; //КЛАДР-код улицы
-        public string StreetWithType { get; set; } = string.Empty; //Улица с типом
-        public string StreetType { get; set; } = string.Empty; //Тип улицы (сокращенный)
-        public string StreetTypeFull { get; set; } = string.Empty; //Тип улицы
-        public string Street { get; set; } = string.Empty; //Улица
-        public string HouseKladrId { get; set; } = string.Empty; //КЛАДР-код дома
-        public string HouseType { get; set; } = string.Empty; //Тип дома (сокращенный)
-        public string HouseTypeFull { get; set; } = string.Empty; //Тип дома
-        public string House { get; set; } = string.Empty; //Номер дома
-        public string BlockType { get; set; } = string.Empty; //Тип корпуса/строения (сокращенный)
-        public string BloctTypeFull { get; set; } = string.Empty; //Тип корпуса/строения
-        public string Block { get; set; } = string.Empty; //Номер корпуса/строения
-        public string Entrance { get; set; } = string.Empty; //Подъезд
-        public string Floor { get; set; } = string.Empty; //Этаж
-        public string FlatType { get; set; } = string.Empty; //Тип квартиры (сокращенный)
-        public string FlatTypeFull { get; set; } = string.Empty; //Тип квартиры
-        public string Flat { get; set; } = string.Empty; //Квартиры
+        public string source { get; set; } = string.Empty;
+        public string result { get; set; } = string.Empty;
 
-        //[InverseProperty("AddressRegistration")]
-        //public virtual ICollection<Counterparty> AddressRegistration { get; set; }
-        //[InverseProperty("AddressActual")]
-        //public virtual ICollection<Counterparty> AddressActual { get; set; }
+        public string postal_code { get; set; } = string.Empty;
+        public string country { get; set; } = string.Empty;
+        public string country_iso_code { get; set; } = string.Empty;
+        public string federal_district { get; set; } = string.Empty;
+
+        public string region_fias_id { get; set; } = string.Empty;
+        public string region_kladr_id { get; set; } = string.Empty;
+        public string region_iso_code { get; set; } = string.Empty;
+        public string region_with_type { get; set; } = string.Empty;
+        public string region_type { get; set; } = string.Empty;
+        public string region_type_full { get; set; } = string.Empty;
+        public string region { get; set; } = string.Empty;
+
+        public string area_fias_id { get; set; } = string.Empty;
+        public string area_kladr_id { get; set; } = string.Empty;
+        public string area_with_type { get; set; } = string.Empty;
+        public string area_type { get; set; } = string.Empty;
+        public string area_type_full { get; set; } = string.Empty;
+        public string area { get; set; } = string.Empty;
+
+        public string sub_area_fias_id { get; set; } = string.Empty;
+        public string sub_area_kladr_id { get; set; } = string.Empty;
+        public string sub_area_with_type { get; set; } = string.Empty;
+        public string sub_area_type { get; set; } = string.Empty;
+        public string sub_area_type_full { get; set; } = string.Empty;
+        public string sub_area { get; set; } = string.Empty;
+            
+        public string city_fias_id { get; set; } = string.Empty;
+        public string city_kladr_id { get; set; } = string.Empty;
+        public string city_with_type { get; set; } = string.Empty;
+        public string city_type { get; set; } = string.Empty;
+        public string city_type_full { get; set; } = string.Empty;
+        public string city { get; set; } = string.Empty;
+
+        public string city_area { get; set; } = string.Empty;
+
+        public string city_district_fias_id { get; set; } = string.Empty;
+        public string city_district_kladr_id { get; set; } = string.Empty;
+        public string city_district_with_type { get; set; } = string.Empty;
+        public string city_district_type { get; set; } = string.Empty;
+        public string city_district_type_full { get; set; } = string.Empty;
+        public string city_district { get; set; } = string.Empty;
+
+        public string settlement_fias_id { get; set; } = string.Empty;
+        public string settlement_kladr_id { get; set; } = string.Empty;
+        public string settlement_with_type { get; set; } = string.Empty;
+        public string settlement_type { get; set; } = string.Empty;
+        public string settlement_type_full { get; set; } = string.Empty;
+        public string settlement { get; set; } = string.Empty;
+
+        public string street_fias_id { get; set; } = string.Empty;
+        public string street_kladr_id { get; set; } = string.Empty;
+        public string street_with_type { get; set; } = string.Empty;
+        public string street_type { get; set; } = string.Empty;
+        public string street_type_full { get; set; } = string.Empty;
+        public string street { get; set; } = string.Empty;
+
+        public string house_fias_id { get; set; } = string.Empty;
+        public string house_kladr_id { get; set; } = string.Empty;
+        public string house_cadnum { get; set; } = string.Empty;
+        public string house_flat_count { get; set; } = string.Empty;
+        public string house_with_type { get; set; } = string.Empty;
+        public string house_type { get; set; } = string.Empty;
+        public string house_type_full { get; set; } = string.Empty;
+        public string house { get; set; } = string.Empty;
+
+        public string block_type { get; set; } = string.Empty;
+        public string block_type_full { get; set; } = string.Empty;
+        public string block { get; set; } = string.Empty;
+
+        public string entrance { get; set; } = string.Empty;
+        public string floor { get; set; } = string.Empty;
+
+        public string flat_fias_id { get; set; } = string.Empty;
+        public string flat_cadnum { get; set; } = string.Empty;
+        public string flat_type { get; set; } = string.Empty;
+        public string flat_type_full { get; set; } = string.Empty;
+        public string flat { get; set; } = string.Empty;
+
+        public string room_fias_id { get; set; } = string.Empty;
+        public string room_cadnum { get; set; } = string.Empty;
+        public string room_type { get; set; } = string.Empty;
+        public string room_type_full { get; set; } = string.Empty;
+        public string room { get; set; } = string.Empty;
+
+        public string stead_fias_id { get; set; } = string.Empty;
+        public string stead_kladr_id { get; set; } = string.Empty;
+        public string stead_type { get; set; } = string.Empty;
+        public string stead_type_full { get; set; } = string.Empty;
+        public string stead { get; set; } = string.Empty;
+
+        public string flat_area { get; set; } = string.Empty;
+        public string square_meter_price { get; set; } = string.Empty;
+        public string flat_price { get; set; } = string.Empty;
+
+        public string postal_box { get; set; } = string.Empty;
+        public string fias_id { get; set; } = string.Empty;
+        public string fias_code { get; set; } = string.Empty;
+        public string fias_level { get; set; } = string.Empty;
+        public string fias_actuality_state { get; set; } = string.Empty;
+        public string kladr_id { get; set; } = string.Empty;
+        public string geoname_id { get; set; } = string.Empty;
+        public string capital_marker { get; set; } = string.Empty;
+
+        public string okato { get; set; } = string.Empty;
+        public string oktmo { get; set; } = string.Empty;
+        public string tax_office { get; set; } = string.Empty;
+        public string tax_office_legal { get; set; } = string.Empty;
+        public string timezone { get; set; } = string.Empty;
+
+        public string geo_lat { get; set; } = string.Empty;
+        public string geo_lon { get; set; } = string.Empty;
+        public string beltway_hit { get; set; } = string.Empty;
+        public string beltway_distance { get; set; } = string.Empty;
+
+        public string qc_geo { get; set; } = string.Empty;
+        public string qc_complete { get; set; } = string.Empty;
+        public string qc_house { get; set; } = string.Empty;
+        public string qc { get; set; } = string.Empty;
+
+        public string unparsed_parts { get; set; } = string.Empty;
+
+        public List<string> history_values { get; set; } = new List<string>();
+        public List<AddressMetro> metro { get; set; } = new List<AddressMetro>();
+        public AddressDivisions divisions { get; set; } = new AddressDivisions();
+
+        public override string ToString()
+        {
+            return string.Format(
+                "[AddressData: source={0}, postal_code={1}, result={2}, qc={3}]",
+                source, postal_code, result, qc
+            );
+        }
+    }
+
+    public class AddressMetro
+    {
+        public string name { get; set; } = string.Empty;
+        public string line { get; set; } = string.Empty;
+        public decimal distance { get; set; }
+    }
+
+    public class AddressDivisions
+    {
+        public AddressAdministrative administrative { get; set; } = new AddressAdministrative();
+        public AddressMunicipal municipal { get; set; } = new AddressMunicipal();
+    }
+
+    public class AddressAdministrative
+    {
+        public AddressPart area { get; set; } = new AddressPart();
+        public AddressPart city { get; set; } = new AddressPart();
+        public AddressPart city_district { get; set; } = new AddressPart();
+        public AddressPart settlement { get; set; } = new AddressPart();
+        public AddressPart planning_structure { get; set; } = new AddressPart();
+    }
+
+    public class AddressMunicipal
+    {
+        public AddressPart area { get; set; } = new AddressPart();
+        public AddressPart sub_area { get; set; } = new AddressPart();
+        public AddressPart city { get; set; } = new AddressPart();
+        public AddressPart settlement { get; set; } = new AddressPart();
+        public AddressPart planning_structure { get; set; } = new AddressPart();
+    }
+
+    public class AddressPart
+    {
+        public string fias_id { get; set; } = string.Empty;
+        public string kladr_id { get; set; } = string.Empty;
+        public string type { get; set; } = string.Empty;
+        public string type_full { get; set; } = string.Empty;
+        public string name { get; set; } = string.Empty;
+        public string name_with_type { get; set; } = string.Empty;
     }
 }
