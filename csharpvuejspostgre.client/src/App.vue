@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <ReportComponent />
+    <ContactComponent />
   </div>
 </template>
 
 <script setup>
-  import ReportComponent from './components/ReportComponent.vue'
+  import ContactComponent from './components/ContactComponent.vue'
 </script>
