@@ -79,53 +79,53 @@ namespace RExpProJS.Server.Models.Helper.Dadata_ru
             return ToAddress(suggestion.data);
         }
 
-        public static bool GetSuggestions(string query, out CounterpartyModel[] organizations, IConfiguration configuration)
-        {
-            var token = configuration["DadataAddress:token"];
-            var secret = configuration["DadataAddress:secret"];
-            var client = new SuggestClientSync(token, secret);
-            try
-            {
-                var org = client.SuggestParty(query);
-                organizations = org.suggestions.Select(party => ToOrganization(party)).ToArray();
-                return true;
-            }
-            catch
-            {
-                organizations = null;
-                return false;
-            }
-        }
-        public static CounterpartyModel ToOrganization(Dadata.Model.Party party)
-        {
-            return new CounterpartyModel
-            {
-                NameFullOpf = party.name.full_with_opf,
-                NameShortOpf = party.name.short_with_opf,
-                NameFull = party.name.full,
-                NameShort = party.name.@short,
-                FullOpf = party.opf.full,
-                ShortOpf = party.opf.@short,
-                OGRN = party.ogrn,
-                DateOGRN = party.ogrn_date,
-                INN = party.inn,
-                KPP = party.kpp,
-                //Director = ToDirector(party),
-                AddressRegistration = ToAddress(party.address)
-            };
-        }
-        public static CounterpartyModel ToOrganization(Dadata.Model.Suggestion<Dadata.Model.Party> suggestion)
-        {
-            suggestion.value = suggestion.value;
-            return ToOrganization(suggestion.data);
-        }
-        //public static Director ToDirector(Dadata.Model.Party party)
+        //public static bool GetSuggestions(string query, out CounterpartyModel[] organizations, IConfiguration configuration)
         //{
-        //    return new Director
+        //    var token = configuration["DadataAddress:token"];
+        //    var secret = configuration["DadataAddress:secret"];
+        //    var client = new SuggestClientSync(token, secret);
+        //    try
         //    {
-        //        FullName = party.management?.name,
-        //        Position = party.management?.post
+        //        var org = client.SuggestParty(query);
+        //        organizations = org.suggestions.Select(party => ToOrganization(party)).ToArray();
+        //        return true;
+        //    }
+        //    catch
+        //    {
+        //        organizations = null;
+        //        return false;
+        //    }
+        //}
+        //public static CounterpartyModel ToOrganization(Dadata.Model.Party party)
+        //{
+        //    return new CounterpartyModel
+        //    {
+        //        NameFullOpf = party.name.full_with_opf,
+        //        NameShortOpf = party.name.short_with_opf,
+        //        NameFull = party.name.full,
+        //        NameShort = party.name.@short,
+        //        FullOpf = party.opf.full,
+        //        ShortOpf = party.opf.@short,
+        //        OGRN = party.ogrn,
+        //        DateOGRN = party.ogrn_date,
+        //        INN = party.inn,
+        //        KPP = party.kpp,
+        //        //Director = ToDirector(party),
+        //        AddressRegistration = ToAddress(party.address)
         //    };
         //}
+        //public static CounterpartyModel ToOrganization(Dadata.Model.Suggestion<Dadata.Model.Party> suggestion)
+        //{
+        //    suggestion.value = suggestion.value;
+        //    return ToOrganization(suggestion.data);
+        //}
+        ////public static Director ToDirector(Dadata.Model.Party party)
+        ////{
+        ////    return new Director
+        ////    {
+        ////        FullName = party.management?.name,
+        ////        Position = party.management?.post
+        ////    };
+        ////}
     }
 }

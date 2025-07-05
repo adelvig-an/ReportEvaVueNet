@@ -19,7 +19,7 @@ namespace BussinesLayer.Mappers
             };
         }
 
-        public static ContactsModel ToReportFromCreateDto(this CreateContactRequestDto reportDto)
+        public static ContactsModel ToContactFromCreateDto(this CreateContactRequestDto reportDto)
         {
             return new ContactsModel
             {

@@ -10,7 +10,7 @@
     /// </summary>
     public class ValuationObjectModel
     {
-        public int ValuationObjectId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string ObjectType { get; set; } = string.Empty;
         /// <summary>

@@ -24,14 +24,14 @@ namespace BussinesLayer.Repository
         public async Task<ContactsModel?> DeleteAsync(int id)
         {
             var contactModel = await _context.Contacts.FirstOrDefaultAsync(x => x.Id == id);
-            if (contactModel != null)
+            if (contactModel == null)
             {
                 return null;
             }
 
             _context.Contacts.Remove(contactModel);
             await _context.SaveChangesAsync();
-            return null;
+            return contactModel;
         }
 
         public async Task<List<ContactsModel>> GetAllAsync()
@@ -48,7 +48,7 @@ namespace BussinesLayer.Repository
         {
             var contactModel = await _context.Contacts.FirstOrDefaultAsync(x => x.Id == id);
 
-            if (contactModel != null)
+            if (contactModel == null)
             {
                 return null;
             }

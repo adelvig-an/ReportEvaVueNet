@@ -15,7 +15,7 @@ namespace DbLayer
         // DbSet для всех моделей
 
         public DbSet<AddressModel> Addresses { get; set; }
-        public DbSet<AppllicationsModel> AppllicationsModels { get; set; }
+        public DbSet<ApplicationsModel> AppllicationsModels { get; set; }
         public DbSet<ClientsModel> Clients { get; set; }
         public DbSet<ContactsModel> Contacts { get; set; }
         public DbSet<ContractsModel> Contracts { get; set; }
@@ -38,7 +38,7 @@ namespace DbLayer
         {
             // Настройка точных типов данных для PostgreSQL
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<AppllicationsModel>()
+            modelBuilder.Entity<ApplicationsModel>()
                 .Property(e => e.Status)
                 .HasConversion(
                     v => v.ToString(),

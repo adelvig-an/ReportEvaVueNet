@@ -45,7 +45,7 @@ namespace CsharpVueJSPostgre.Server.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateContactRequestDto contactDto)
         {
-            var contactModel = contactDto.ToReportFromCreateDto();
+            var contactModel = contactDto.ToContactFromCreateDto();
 
             await _contactRepo.CreateAsync(contactModel);
 

@@ -49,6 +49,7 @@ app.UseStaticFiles();
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    dbContext.Database.EnsureDeleted(); // Удаляет БД, если она есть (не для миграций!)
     dbContext.Database.EnsureCreated(); // Создает БД, если её нет (не для миграций!)
     // Или: dbContext.Database.Migrate(); — применяет миграции
 }

@@ -18,9 +18,9 @@
     /// - Клиент
     /// - Объект оценки
     /// </summary>
-    public class AppllicationsModel
+    public class ApplicationsModel
     {
-        public int AppllicationId { get; set; }
+        public int Id { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime Deadline { get; set; }
         public ApplicationStatus Status { get; set; }
@@ -32,7 +32,7 @@
         /// - Клиент
         /// - Объект
         /// </summary>
-        public EmployeesModel AssgreeId { get; set; } = new EmployeesModel(); // Автор заявки
+        public EmployeesModel AssigneeId { get; set; } = new EmployeesModel(); // Автор заявки
         public EmployeesModel EmployeeId { get; set; } = new EmployeesModel(); // Исполнитель заявки
         public ClientsModel ClientId { get; set; } = new ClientsModel(); // Клиент заявки
         public ValuationObjectModel ValuationObjectId { get; set; } = new ValuationObjectModel();

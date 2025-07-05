@@ -23,7 +23,7 @@
         /// <summary>
         /// Ссылка на адрес
         /// </summary>
-        public virtual AddressModel Address { get; set; } = new AddressModel();
+        //public virtual AddressModel Address { get; set; } = new AddressModel();
 
     }
 }

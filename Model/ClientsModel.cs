@@ -12,7 +12,7 @@
     /// </summary>
     public class ClientsModel
     {
-        public int ClientId { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Сохранение типа клиента
         /// - Физическое лицо
