@@ -2,6 +2,9 @@
 
 namespace Model
 {
+    /// <summary>
+    /// Данные адреса из Dadata.ru
+    /// </summary>
     public class AddressModel
     {
         public int Id { get; set; }

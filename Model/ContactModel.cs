@@ -1,10 +1,30 @@
 ﻿namespace Model
 {
+
+    /// <summary>
+    /// Общие данные человека
+    /// - Имя
+    /// - Отчество
+    /// - Фамилия
+    /// - Email
+    /// - Телефон
+    /// - Дата создания
+    /// - Ссылка на адрес
+    /// </summary>
     public class ContactModel
     {
         public int Id { get; set; }
-        public string Name { get; set; } = string.Empty; // Имя контакта
-        public string Patronymic { get; set; } = string.Empty; // Отчество контакта
-        public string Surname { get; set; } = string.Empty; // Фамилия контакта
+        public string Name { get; set; } = string.Empty;
+        public string Ptronymic { get; set; } = string.Empty;
+        public string Surname { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
+        public DateTime CreatedAt { get; set; } = new DateTime();
+
+        /// <summary>
+        /// Ссылка на адрес
+        /// </summary>
+        public virtual AddressModel Address { get; set; } = new AddressModel();
+
     }
 }
