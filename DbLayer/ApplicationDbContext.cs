@@ -44,6 +44,12 @@ namespace DbLayer
                     v => v.ToString(),
                     v => (ApplicationStatus)Enum.Parse(typeof(ApplicationStatus), v)
                 );
+            modelBuilder.Entity<ContactsModel>()
+                .Property(e => e.ContactType)
+                .HasConversion(
+                    v => v.ToString(),
+                    v => (ContactRole)Enum.Parse(typeof(ContactRole), v)
+                );
             modelBuilder.Entity<ClientsModel>()
                 .Property(e => e.ClientType)
                 .HasConversion(

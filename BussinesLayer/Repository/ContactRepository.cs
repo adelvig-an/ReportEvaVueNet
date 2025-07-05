@@ -58,7 +58,7 @@ namespace BussinesLayer.Repository
             contactModel.Surname = contactDto.Surname;
             contactModel.Email = contactDto.Email;
             contactModel.Phone = contactDto.Phone;
-            contactModel.CreatedAt = contactDto.CreatedAt;
+            contactModel.ContactType = contactDto.ContactType;
 
             await _context.SaveChangesAsync();
 

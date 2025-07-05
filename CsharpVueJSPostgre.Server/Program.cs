@@ -40,6 +40,7 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader()));
 
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
+builder.Services.AddScoped<IContractRepository, ContractRepository>();
 
 var app = builder.Build();
 

@@ -47,7 +47,12 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '/report': {
+            '/Contact': {
+                target,
+                secure: false,
+                changeOrigin: true
+            },
+            '/Contract': {
                 target,
                 secure: false,
                 changeOrigin: true

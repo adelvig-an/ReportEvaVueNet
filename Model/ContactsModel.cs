@@ -1,5 +1,10 @@
 ﻿namespace Model
 {
+    public enum ContactRole 
+    {
+        Client = 0, 
+        Sale = 1,
+    }
     /// <summary>
     /// Общие данные человека
     /// - Имя
@@ -18,6 +23,7 @@
         public string Surname { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string Phone { get; set; } = string.Empty;
+        public ContactRole ContactType { get; set; }
         public DateTime CreatedAt { get; set; } = new DateTime();
 
         /// <summary>

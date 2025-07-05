@@ -15,7 +15,7 @@ namespace BussinesLayer.Mappers
                 Surname = contactModel.Surname,
                 Email = contactModel.Email,
                 Phone = contactModel.Phone,
-                CreatedAt = contactModel.CreatedAt,
+                ContactType = contactModel.ContactType,
             };
         }
 
@@ -28,6 +28,7 @@ namespace BussinesLayer.Mappers
                 Surname = reportDto.Surname,
                 Email = reportDto.Email,
                 Phone = reportDto.Phone,
+                ContactType = reportDto.ContactType,
                 CreatedAt = reportDto.CreatedAt,
             };
         }
