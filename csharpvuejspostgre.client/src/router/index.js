@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ReportComponent from '../components/ContactComponent.vue'
+import ContactComponent from '../components/ContactComponent.vue'
 
 const routes = [
-  { path: '/reports', component: ReportComponent }
+  { path: '/Contact', component: ContactComponent }
 ]
 
 export default createRouter({

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CsharpVueJSPostgre.Server.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ContactController : ControllerBase
     {
         private readonly ApplicationDbContext _dbContext;
